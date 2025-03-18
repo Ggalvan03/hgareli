@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { spaceGrotesk } from "@/app/lib/fonts";
+import Head from "next/head";
 import Header from "@/app/ui/header";
 
 export const metadata: Metadata = {
@@ -11,6 +12,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      </Head>
       <body
         className={`${spaceGrotesk.className} antialiased md:px-[10vh] px-[2vh]`}
       >
