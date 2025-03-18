@@ -19,7 +19,7 @@ export default function Page() {
   });
 
   return (
-    <div className="p-4">
+    <div className="p-2">
       <h2 className="text-2xl font-bold mb-4">Productos</h2>
 
       <div className="flex flex-col md:flex-row gap-4 mb-6 justify-start">
@@ -46,8 +46,7 @@ export default function Page() {
         </select>
       </div>
 
-      {/* Products Grid */}
-      <div className="flex flex-wrap w-full gap-1 justify-center">
+      <div className="flex flex-wrap gap-4 justify-center">
         {filteredProductos.length > 0 ? (
           filteredProductos.map((producto) => (
             <ProductCard key={producto.id} producto={producto} />
