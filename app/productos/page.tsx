@@ -1,12 +1,36 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ProductCard from "@/app/ui/productos/product-card";
 import { productos } from "@/app/lib/data";
 
 export default function Page() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedType, setSelectedType] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(9); // Default to 9 items per page
+
+  // Dynamically calculate items per page based on screen size
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      if (window.innerWidth >= 1024) {
+        setItemsPerPage(15); // 5 columns for large screens
+      } else if (window.innerWidth >= 768) {
+        setItemsPerPage(12); // 4 columns for medium screens
+      } else if (window.innerWidth >= 640) {
+        setItemsPerPage(9); // 3 columns for small screens
+      } else {
+        setItemsPerPage(6); // 2 columns for extra small screens
+      }
+    };
+
+    updateItemsPerPage();
+    window.addEventListener("resize", updateItemsPerPage);
+
+    return () => {
+      window.removeEventListener("resize", updateItemsPerPage);
+    };
+  }, []);
 
   // Get unique types for dropdown
   const uniqueTypes = [...new Set(productos.map((p) => p.tipo))];
@@ -18,11 +42,29 @@ export default function Page() {
     return matchesName && matchesType;
   });
 
+  // Pagination logic
+  const totalPages = Math.ceil(filteredProductos.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const paginatedProductos = filteredProductos.slice(startIndex, startIndex + itemsPerPage);
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
   return (
     <div className="p-2">
       <h2 className="text-2xl font-bold mb-4">Productos</h2>
 
-      <div className="flex flex-col md:flex-row gap-4 mb-6 justify-start">
+      <div className="flex flex-col md:flex-row gap-4 mb-6 items-center">
+        {/* Search Input */}
         <input
           type="text"
           placeholder="Buscar por nombre..."
@@ -31,24 +73,47 @@ export default function Page() {
           className="border p-2 rounded w-full md:w-1/3"
         />
 
-        {/* Dropdown Filter */}
-        <select
-          value={selectedType}
-          onChange={(e) => setSelectedType(e.target.value)}
-          className="border p-2 rounded w-full md:w-1/6"
-        >
-          <option value="">Todos</option>
-          {uniqueTypes.map((type) => (
-            <option key={type} value={type}>
-              {type}
-            </option>
-          ))}
-        </select>
+        <div className="flex w-full md:w-fit flex-col md:flex-row gap-4 items-center">
+          <select
+            value={selectedType}
+            onChange={(e) => setSelectedType(e.target.value)}
+            className="border p-2 rounded min-w-fit w-full md:w-1/6"
+          >
+            <option value="">Todos</option>
+            {uniqueTypes.map((type) => (
+              <option key={type} value={type}>
+                {type}
+              </option>
+            ))}
+          </select>
+
+          {totalPages > 1 && (
+            <div className="flex min-w-fit items-center gap-2">
+              <button
+                onClick={handlePreviousPage}
+                disabled={currentPage === 1}
+                className={`text-sm ${currentPage === 1 ? "text-gray-400" : "font-bold"}`}
+              >
+                &lt;
+              </button>
+              <span className="text-sm min-w-fit">
+                <span className="font-bold">{currentPage}</span> de {totalPages}
+              </span>
+              <button
+                onClick={handleNextPage}
+                disabled={currentPage === totalPages}
+                className={`text-sm ${currentPage === totalPages ? "text-gray-400" : "font-bold"}`}
+              >
+                &gt;
+              </button>
+            </div>
+          )}
+        </div>
       </div>
 
-      <div className="flex flex-wrap gap-4 justify-center">
-        {filteredProductos.length > 0 ? (
-          filteredProductos.map((producto) => (
+      <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+        {paginatedProductos.length > 0 ? (
+          paginatedProductos.map((producto) => (
             <ProductCard key={producto.id} producto={producto} />
           ))
         ) : (
