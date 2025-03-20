@@ -13,14 +13,18 @@ export default function Page() {
   // Dynamically calculate items per page based on screen size
   useEffect(() => {
     const updateItemsPerPage = () => {
-      if (window.innerWidth >= 1024) {
-        setItemsPerPage(15); // 5 columns for large screens
-      } else if (window.innerWidth >= 768) {
-        setItemsPerPage(12); // 4 columns for medium screens
-      } else if (window.innerWidth >= 640) {
+      if (window.innerWidth >= 1407) {
+        setItemsPerPage(21); // 7 columns for large screens
+      } else if (window.innerWidth >= 1250) {
+        setItemsPerPage(18); // 6 columns for large screens
+      } else if (window.innerWidth >= 1055) {
+        setItemsPerPage(15); // 5 columns for medium screens
+      } else if (window.innerWidth >= 880) {
+        setItemsPerPage(12); // 4 columns for small screens
+      } else if (window.innerWidth >= 575) {
         setItemsPerPage(9); // 3 columns for small screens
-      } else {
-        setItemsPerPage(6); // 2 columns for extra small screens
+      }else {
+        setItemsPerPage(8); // 2 columns for extra small screens
       }
     };
 
@@ -61,10 +65,7 @@ export default function Page() {
 
   return (
     <div className="p-2">
-      <h2 className="text-2xl font-bold mb-4">Productos</h2>
-
       <div className="flex flex-col md:flex-row gap-4 mb-6 items-center">
-        {/* Search Input */}
         <input
           type="text"
           placeholder="Buscar por nombre..."
