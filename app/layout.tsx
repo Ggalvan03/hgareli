@@ -3,6 +3,7 @@ import "./globals.css";
 import { spaceGrotesk } from "@/app/lib/fonts";
 import Head from "next/head";
 import Header from "@/app/ui/header";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: "Hgareli",
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       >
         <Header/>
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
