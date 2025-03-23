@@ -1,18 +1,18 @@
 "use client"
 
-import { ShoppingBagIcon } from "@heroicons/react/24/solid"
 import { motion } from "framer-motion";
-
+import { ShoppingBasket } from "lucide-react";
+import Link from "next/link";
 function Cart(){
     return(
-        <div>
+        <Link href={"/"}>
             <motion.button
             whileHover={{ scale: 1.1, opacity: 0.8 }}
             whileTap={{ scale: 0.9 }}
             >
-                <ShoppingBagIcon  className="w-10 h-10 text-black hover:"/>
+                <ShoppingBasket  strokeWidth = {1.5} className="w-9 h-9 text-black hover:"/>
             </motion.button>
-        </div>
+        </Link>
     );
 }
 

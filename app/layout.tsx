@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       </Head>
       <body
-        className={`${spaceGrotesk.className} antialiased md:px-[10vh] px-[2vh]`}
+        className={`${spaceGrotesk.className} flex flex-col antialiased md:px-[10vh] px-[2vh] h-screen`}
       >
         <Header/>
         {children}
