@@ -43,12 +43,12 @@ export default function ProductPage() {
       </div>
 
       <div className='sm:h-full flex items-center'>
-        <div className='flex flex-row w-full mt-5 sm:mt-10 flex-wrap sm:flex-nowrap sm:h-fit'>
-          <div className=" flex justify-center items-center w-full sm:w-fill md:max-w-fit md:mr-10 lg:max-w-1/2  ">
+        <div className='flex justify-center flex-row w-full mt-5 sm:mt-10 flex-wrap sm:flex-nowrap sm:h-fit'>
+          <div className=" flex justify-center items-center w-full sm:mr-10 sm:w-fit md:max-w-1/2 md:mr-10 lg:max-w-1/2  ">
             <ProductImages variante={product.variantes[selectedVariantId]}/>
           </div>
 
-          <div className='h-fill'>
+          <div className='flex flex-col flex-start h-fill sm:min-h-full sm:gap-2  w-full sm:max-w-1/3'>
             <h2 className='hidden sm:block font-bold text-2xl'>{product.nombre}</h2>
             <p className='hidden sm:block'>{product.tipo}</p>
             <p className='text-lg font-medium'>${product.precio}</p>
