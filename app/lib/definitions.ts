@@ -8,7 +8,7 @@ export interface Producto {
 }
 
 export interface Variante {
-    sub_id: string;
+    sub_id: number;
     material: 'oro' | 'plata';
     descripcion: string;
     tamaños: string[];
