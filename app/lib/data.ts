@@ -100,7 +100,6 @@ export const productos: Producto[] = [
                 precio: 3500,
                 images_URL: [
                     '/collares/oro/collar_oro_1.png',
-                    '/collares/oro/collar_oro_2.png',
                     '/collares/oro/collar_oro_3.png'
                 ]
             }
