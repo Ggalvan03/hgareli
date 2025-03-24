@@ -12,7 +12,7 @@ export const productos: Producto[] = [
                 sub_id: 0,
                 material: 'oro',
                 descripcion: 'Anillo Aurora en oro de 14k con incrustaciones de zirconia.',
-                tamaños: ['6', '7', '8'],
+                tamaños: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'],
                 precio: 2500,
                 images_URL: [
                     '/anillos/oro/anillo_oro_1.png',
@@ -54,7 +54,7 @@ export const productos: Producto[] = [
                 sub_id: 0,
                 material: 'oro',
                 descripcion: 'Charm en forma de corazón de oro de 14k.',
-                tamaños: ['único'],
+                tamaños: ['Único'],
                 precio: 1500,
                 images_URL: [
                     '/charms/oro/charm_oro_1.png',
@@ -75,7 +75,7 @@ export const productos: Producto[] = [
                 sub_id: 0,
                 material: 'plata',
                 descripcion: 'Anillo con diseño de luna creciente en plata.',
-                tamaños: ['6', '7', '8'],
+                tamaños: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'],
                 precio: 2800,
                 images_URL: [
                     '/anillos/plata/anillo_plata_1.png',
