@@ -112,7 +112,7 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+      <div className="flex flex-wrap gap-8 sm:gap-4 justify-center md:justify-start">
         {paginatedProductos.length > 0 ? (
           paginatedProductos.map((producto) => (
             <ProductCard key={producto.id} producto={producto} />

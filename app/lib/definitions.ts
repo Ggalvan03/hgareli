@@ -16,6 +16,13 @@ export interface Variante {
     images_URL: string[];
 }
 
+export interface CarritoItem {
+    cantidad: number;
+    producto: Producto;
+    variante: Variante;
+    tamaño: string;
+}
+
 export interface Servicio  {
     tipo:  'mantenimiento' | 'bespoke';
     presencial: boolean;

@@ -5,7 +5,7 @@ import { ShoppingBasket } from "lucide-react";
 import Link from "next/link";
 function Cart(){
     return(
-        <Link href={"/"}>
+        <Link href={"/cart"}>
             <motion.button
             whileHover={{ scale: 1.1, opacity: 0.8 }}
             whileTap={{ scale: 0.9 }}

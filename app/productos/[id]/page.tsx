@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import ProductImages from '@/app/ui/productos/product-page/product-images';
 import SelectedVariant from '@/app/ui/productos/product-page/selected-variant';
 import SizeSelector from '@/app/ui/productos/product-page/size-selector';
+import AddToCart from '@/app/ui/productos/product-page/add-to-cart';
 
 export default function ProductPage() {
   const params = useParams();
@@ -36,7 +37,7 @@ export default function ProductPage() {
         </motion.button>
       </div>
 
-      <div className='flex flex-col w-full items-center mb-5 sm:hidden '>
+      <div className='flex flex-col w-full items-center sm:hidden '>
         <h2 className=' font-bold text-2xl '>{product.nombre}</h2>  
         <p>{product.tipo}</p>
       </div>
@@ -46,6 +47,7 @@ export default function ProductPage() {
           <div className=" flex justify-center items-center w-full sm:w-fill md:max-w-fit md:mr-10 lg:max-w-1/2  ">
             <ProductImages variante={product.variantes[selectedVariantId]}/>
           </div>
+
           <div className='h-fill'>
             <h2 className='hidden sm:block font-bold text-2xl'>{product.nombre}</h2>
             <p className='hidden sm:block'>{product.tipo}</p>
@@ -62,6 +64,14 @@ export default function ProductPage() {
               onSelect={setSelectedVariantId} 
             />
             <p className='hidden sm:block'>{product.variantes[selectedVariantId].descripcion}</p>
+            
+            <AddToCart
+              cantidad={1}
+              producto={product}
+              selectedVariant={product.variantes[selectedVariantId]}
+              selectedSize={selectedSize}
+            />
+
           </div>
         </div>
       </div>
