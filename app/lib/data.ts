@@ -57,9 +57,9 @@ export const productos: Producto[] = [
                 tamaños: ['único'],
                 precio: 1500,
                 images_URL: [
-                    '/charms/oro/charms_oro_1.png',
-                    '/charms/oro/charms_oro_2.png',
-                    '/charms/oro/charms_oro_3.png'
+                    '/charms/oro/charm_oro_1.png',
+                    '/charms/oro/charm_oro_2.png',
+                    '/charms/oro/charm_oro_3.png'
                 ]
             }
         ]
@@ -120,9 +120,9 @@ export const productos: Producto[] = [
                 tamaños: ['único'],
                 precio: 1700,
                 images_URL: [
-                    '/charms/oro/charms_plata_1.png',
-                    '/charms/oro/charms_plata_2.png',
-                    '/charms/oro/charms_plata_3.png'
+                    '/charms/oro/charm_oro_1.png',
+                    '/charms/oro/charm_oro_2.png',
+                    '/charms/oro/charm_oro_3.png'
                 ]
             },
             {
@@ -132,9 +132,9 @@ export const productos: Producto[] = [
                 tamaños: ['único'],
                 precio: 1300,
                 images_URL: [
-                    '/charms/plata/charms_plata_1.png',
-                    '/charms/plata/charms_plata_2.png',
-                    '/charms/plata/charms_plata_3.png'
+                    '/charms/plata/charm_plata_1.png',
+                    '/charms/plata/charm_plata_2.png',
+                    '/charms/plata/charm_plata_3.png'
                 ]
             }
         ]
