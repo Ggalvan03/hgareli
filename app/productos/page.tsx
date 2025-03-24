@@ -71,7 +71,7 @@ export default function Page() {
           placeholder="Buscar por nombre..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="border p-2 rounded w-full md:w-1/3"
+          className="text-m border p-2 rounded w-full md:w-1/3"
         />
 
         <div className="flex w-full md:w-fit flex-col md:flex-row gap-4 items-center">
