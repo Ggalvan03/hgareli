@@ -9,7 +9,7 @@ export const productos: Producto[] = [
         thumbnail_URL: '/anillos/thumbnail/anillo.png',
         variantes: [
             {
-                sub_id: 'var-001a',
+                sub_id: 0,
                 material: 'oro',
                 descripcion: 'Anillo Aurora en oro de 14k con incrustaciones de zirconia.',
                 tamaños: ['6', '7', '8'],
@@ -30,7 +30,7 @@ export const productos: Producto[] = [
         thumbnail_URL: '/collares/thumbnail/collar.png',
         variantes: [
             {
-                sub_id: 'var-002a',
+                sub_id: 0,
                 material: 'plata',
                 descripcion: 'Collar Estrella en plata esterlina con dije de estrella.',
                 tamaños: ['45cm', '50cm'],
@@ -51,7 +51,7 @@ export const productos: Producto[] = [
         thumbnail_URL: '/charms/thumbnail/charm.png',
         variantes: [
             {
-                sub_id: 'var-003a',
+                sub_id: 0,
                 material: 'oro',
                 descripcion: 'Charm en forma de corazón de oro de 14k.',
                 tamaños: ['único'],
@@ -72,7 +72,7 @@ export const productos: Producto[] = [
         thumbnail_URL: '/anillos/thumbnail/anillo.png',
         variantes: [
             {
-                sub_id: 'var-004a',
+                sub_id: 0,
                 material: 'plata',
                 descripcion: 'Anillo con diseño de luna creciente en plata.',
                 tamaños: ['6', '7', '8'],
@@ -93,7 +93,7 @@ export const productos: Producto[] = [
         thumbnail_URL: '/collares/thumbnail/collar.png',
         variantes: [
             {
-                sub_id: 'var-005a',
+                sub_id: 0,
                 material: 'oro',
                 descripcion: 'Collar con dije de flor de oro y zirconias.',
                 tamaños: ['40cm', '45cm'],
@@ -114,7 +114,7 @@ export const productos: Producto[] = [
         thumbnail_URL: 'charms/thumbnail/charm.png',
         variantes: [
             {
-                sub_id: 'var-006a',
+                sub_id: 0,
                 material: 'oro',
                 descripcion: 'Charm de estrella fugaz en oro de 14k.',
                 tamaños: ['único'],
@@ -126,7 +126,7 @@ export const productos: Producto[] = [
                 ]
             },
             {
-                sub_id: 'var-006b',
+                sub_id: 1,
                 material: 'plata',
                 descripcion: 'Charm de estrella fugaz en plata esterlina.',
                 tamaños: ['único'],
