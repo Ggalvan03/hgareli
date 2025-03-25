@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { ShoppingBasket } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { useCart } from "@/app/context/cart-context";
 
 function Cart() {
@@ -15,7 +14,7 @@ function Cart() {
             <motion.button
                 whileHover={{ scale: 1.1, opacity: 0.8 }}
                 whileTap={{ scale: 0.9 }}
-                className="relative"
+                className="relative cursor-pointer"
             >
                 <ShoppingBasket strokeWidth={1.5} className="w-9 h-9 text-black" />
                 {cartCount > 0 && (

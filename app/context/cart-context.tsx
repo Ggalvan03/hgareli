@@ -37,6 +37,21 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         saveCart(updatedCart);
     };
 
+    const increaseItem = (itemToIncrease: CarritoItem) => {
+        const updatedCart = [...cart];
+        const existingIndex = updatedCart.findIndex(
+            (item) =>
+                item.producto.id === itemToIncrease.producto.id &&
+                item.variante.sub_id === itemToIncrease.variante.sub_id &&
+                item.tamaño === itemToIncrease.tamaño
+        );
+
+        if (existingIndex !== -1) {
+            updatedCart[existingIndex].cantidad += 1;
+            saveCart(updatedCart);
+        }
+    };
+
     const decreaseItem = (itemToDecrease: CarritoItem) => {
         const updatedCart = [...cart];
         const existingIndex = updatedCart.findIndex(
@@ -73,7 +88,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     };
 
     return (
-        <CartContext.Provider value={{ cart, addItem, decreaseItem, removeItem, clearCart }}>
+        <CartContext.Provider value={{ cart, addItem, increaseItem, decreaseItem, removeItem, clearCart }}>
             {children}
         </CartContext.Provider>
     );

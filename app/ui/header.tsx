@@ -9,7 +9,7 @@ export default function Header() {
         <div className="flex w-full h-[10vh] items-center justify-between p-3 ">
             <Link href={"/"}>
                 <div className={`${cormorant.className} text-[5vh] font-600s`}> 
-                    Hgareli
+                    <img src="/Logo nuevo.png" className="h-40 w-50 object-cover"/>
                 </div>
             </Link>
             
