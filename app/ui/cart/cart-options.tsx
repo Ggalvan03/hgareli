@@ -12,7 +12,7 @@ export default function CartOptions({item}: {item: CarritoItem}) {
                 <motion.button
                         whileHover={{ scale: 1.1, opacity: 0.8 }}
                         whileTap={{ scale: 0.9 }}
-                        className="cursor-pointer font-black"
+                        className="w-[2vh] sm:w-fit cursor-pointer font-black items-center"
                         onClick={() => decreaseItem(item)}
                 >
                     -
@@ -23,7 +23,7 @@ export default function CartOptions({item}: {item: CarritoItem}) {
                 <motion.button
                         whileHover={{ scale: 1.1, opacity: 0.8 }}
                         whileTap={{ scale: 0.9 }}
-                        className="cursor-pointer font-black"
+                        className="w-[2vh] sm:w-fit cursor-pointer font-black items-center"
                         onClick={() => increaseItem(item)}
                 >
                     +
