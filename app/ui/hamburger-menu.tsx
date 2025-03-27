@@ -39,7 +39,7 @@ export default function HamburgerMenu(){
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.2 }}
-          className="absolute top-full right-0 mt-2 w-48 bg-white shadow-lg rounded-lg p-2 z-1"
+          className="absolute top-full right-0 mt-2 w-48 bg-white shadow-lg rounded-lg p-2 z-2"
         >
           <nav className="flex flex-col space-y-2" onClick={() => setOpen(false)}>
             <NavLinks/>
