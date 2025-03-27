@@ -29,7 +29,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       >
         <CartProvider>
           <Header/>
-          {children}
+          <div className="h-full">
+            {children}
+          </div>
         </CartProvider>
         <SpeedInsights />
         <Analytics />
