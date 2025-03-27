@@ -27,7 +27,7 @@ export default function Page() {
                 </div>
             ) : (
                 <div className="flex flex-col h-full w-full items-center justify-center text-gray-500">
-                    Parece que todavía no tienes productos en tu carrito. 
+                    Parece que todavía no tienes nada en tu carrito. 
                     <Link className="font-bold" href="/productos">
                         Encuentra algo que te encante
                     </Link>
