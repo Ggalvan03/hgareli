@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.hgareli.com
+
+# Sitemaps
+Sitemap: https://www.hgareli.com/sitemap.xml
