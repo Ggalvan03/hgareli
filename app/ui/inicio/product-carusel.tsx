@@ -92,21 +92,22 @@ export default function CartCarusel() {
     }, [containerSize]);
 
     return (
-        <div ref={containerRef} className="relative w-full h-full overflow-hidden">
-            {cards.map(card => (
-                <motion.div
-                    key={card.id}
-                    style={{
-                        position: 'absolute',
-                        top: card.y,
-                        left: card.x,
-                        width: cardSize,
-                        height: cardSize,
-                    }}
-                >
-                    <ProductCard product={card.product} />
-                </motion.div>
-            ))}
-        </div>
+        <div ref={containerRef} className="relative w-full h-[90vh] overflow-hidden">
+        {cards.map(card => (
+            <motion.div
+                key={card.id}
+                style={{
+                    position: 'absolute',
+                    top: card.y,
+                    left: card.x,
+                    width: cardSize,
+                    height: cardSize,
+                }}
+            >
+                <ProductCard product={card.product} />
+            </motion.div>
+        ))}
+        <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px] backdrop-filter pointer-events-none z-50 rounded-xl border border-white/20" />
+    </div>
     );
 }
