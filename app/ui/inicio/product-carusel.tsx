@@ -92,7 +92,7 @@ export default function CartCarusel() {
     }, [containerSize]);
 
     return (
-        <div ref={containerRef} className="relative w-full h-[70vh] overflow-hidden">
+        <div ref={containerRef} className="relative w-full h-[90vh] overflow-hidden">
         {cards.map(card => (
             <motion.div
                 key={card.id}
