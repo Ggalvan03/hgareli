@@ -15,7 +15,7 @@ export default function Page() {
         <div className="flex flex-col items-center gap-6">
           <h1 className={`text-6xl font-bold ${cormorant.className}`}>Bienvenidos</h1>
           <Link className="text-xl border-2 px-4 py-2 rounded-xs" href="/productos">
-            Visita nuestro catalogo
+            Visita nuestro catalog
           </Link>
         </div>
       </div>
